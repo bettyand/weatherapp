@@ -8,7 +8,7 @@ const weather = {
     getCoords: function (zip) {
         fetch("http://api.openweathermap.org/geo/1.0/zip?zip=" + zip + ",US&appid=" + this.key)
         .then(response => response.json())
-        .then(coords => this.getWeather(coords));
+        .then(coords => this.getWeather(coords))
     },
 
     getWeather: function (coords) {

@@ -8,34 +8,37 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-image: linear-gradient(darkslateblue, black)
+    background-image: linear-gradient(darkslateblue, #100c27);
+    color: #100c27;
 }
 
 .card {
-    background-color: lightgray;
+    background-color: #b8b1e7;
     padding: 2em;
     border-radius: 20px;
     text-align: center;
 }
 
-.search {
-    height: 30px;
-}
-
 button {
     cursor: pointer;
-    height: inherit;
-    padding: none;
+    height: 2em;
+    background-color: #7163cf;
+    border: none;
+    border-radius: 5px;
 }
 
 input {
-    height: inherit;
+    height: 1.9em;
+    border: none;
+    border-radius: 5px;
+    background-color: #edebf9;
 }
 
 .main-stats {
     display: flex;
     justify-content: space-around;
-    background-color: white;
+    background-color: #7163cf;
+    color: #edebf9;
     border-radius: 15px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -46,6 +49,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1em;
 }
 
 .temperature {
@@ -60,13 +64,11 @@ input {
     align-items: center;
 }
 
-.hi-lo {
+.hi-lo, .more-info {
     display: flex;
     justify-content: space-around;
-}
-
-.more-info {
-    display: flex;
-    justify-content: space-around;
+    background-color: #958adb;
+    border-radius: 25px;
+    margin-top: 20px;
 }
 
