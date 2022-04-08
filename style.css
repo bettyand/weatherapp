@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+main {
+    background-color: lightgray;
+    padding: 2em;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.hi-lo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.temp {
+    font-size: 3em;
+}
+
+.condition {
+    font-size: 1.5em;
+
+}
+
+button {
+    cursor: pointer;
+}

@@ -1,9 +1,34 @@
-// configure express
-const express = require("express");
-const app = express();
-app.use(express.json());
+const weather = {
+    key: "09040523d49139cfae82b17a00c7ec08",
 
-// configure morgan
-const morgan = require("morgan");
-app.use(morgan("tiny"));
+    startSearch: function () {
+        this.getCoords(document.querySelector("#search-bar").value);
+    },
 
+    getCoords: function (zip) {
+        fetch("http://api.openweathermap.org/geo/1.0/zip?zip=" + zip + ",US&appid=" + this.key)
+        .then(response => response.json())
+        .then(coords => this.getWeather(coords));
+    },
+
+    getWeather: function (coords) {
+        fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + coords.lat + "&lon=" + coords.lon + "&units=imperial&appid=" + this.key)
+        .then(response => response.json())
+        .then(data => this.displayWeather(data));
+    },
+
+    displayWeather: function (data) {
+        document.querySelector(".city").innerText = data.name;
+        document.querySelector(".temp").innerText = data.main.temp + "°F";
+        document.querySelector(".condition").innerText = data.weather[0].main;
+        document.querySelector(".low").innerText = data.main.temp_min;
+        document.querySelector(".high").innerText = data.main.temp_max
+    }
+}
+
+const today = new Date();
+const [month, day, year] = [today.toLocaleString("default", {month: "long"}), today.getDate(), today.getFullYear()];
+document.querySelector(".date").innerHTML = `${month} ${day}, ${year}`;
+
+document.querySelector("#button").addEventListener("click", function () {weather.startSearch()});
+document.querySelector("#search-bar").addEventListener("keyup", function (event) {if (event.key =="Enter") {weather.startSearch();}})
