@@ -18,17 +18,21 @@ const weather = {
     },
 
     displayWeather: function (data) {
-        document.querySelector(".city").innerText = data.name;
-        document.querySelector(".temp").innerText = data.main.temp + "°F";
+        document.querySelector(".city").innerText = "Current Weather in " + data.name;
+        document.querySelector(".temperature").innerText = data.main.temp + "°F";
+        document.querySelector(".feels").innerText = "Feels Like " + data.main.feels_like + "°F";
         document.querySelector(".condition").innerText = data.weather[0].main;
-        document.querySelector(".low").innerText = data.main.temp_min;
-        document.querySelector(".high").innerText = data.main.temp_max
+        document.querySelector(".descrip").innerText = data.weather[0].description;
+        document.querySelector(".low").innerText = "Low: " + data.main.temp_min + "°F";
+        document.querySelector(".high").innerText = "High: " + data.main.temp_max + "°F";
+        document.querySelector(".humid").innerText = data.main.humidity + "% Humidity";
+        document.querySelector(".wind").innerText = data.wind.speed + "MPH Winds";
     }
 }
 
 const today = new Date();
 const [month, day, year] = [today.toLocaleString("default", {month: "long"}), today.getDate(), today.getFullYear()];
-document.querySelector(".date").innerHTML = `${month} ${day}, ${year}`;
+document.querySelector(".date").innerHTML = `on ${month} ${day}, ${year}`;
 
 document.querySelector("#button").addEventListener("click", function () {weather.startSearch()});
 document.querySelector("#search-bar").addEventListener("keyup", function (event) {if (event.key =="Enter") {weather.startSearch();}})

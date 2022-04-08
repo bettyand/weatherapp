@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(darkslateblue, black)
+}
+
+.card {
+    background-color: lightgray;
+    padding: 2em;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.search {
+    height: 30px;
+}
+
+button {
+    cursor: pointer;
+    height: inherit;
+    padding: none;
+}
+
+input {
+    height: inherit;
+}
+
+.main-stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temperature {
+    font-size: 2.5em;
+    margin: auto;
+}
+
+.cond {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hi-lo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.more-info {
+    display: flex;
+    justify-content: space-around;
+}
+

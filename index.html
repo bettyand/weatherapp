@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <main>
-        <h1>My Weather App</h1>
+    <div class="card">
         <div class="search">
-            <input type="text" id="search-bar" aria-label="search bar" placeholder="US Zip Code" autofocus autocomplete="on">
+            <input type="text" id="search-bar" aria-label="search bar" placeholder="US Zip Code" autofocus
+                autocomplete="on">
             <button id="button">Get My Weather</button>
-        </div>
+        </div>        
+        <h1 class="city">Current Weather in Charlotte</h1>
+        <p class="date">on April 20, 2022</p>
         <div class="info">
-            <h2 class="city">Charlotte</h2>            
-            <p class="date">April 20, 2022</p>
-            <p class="temp">69°F</p>
-            <p class="condition">Cloudy</p>
+            <div class="main-stats">
+                <div class="temp">
+                    <p class="temperature">69°F</p>
+                    <p class="feels">Feels Like</p>
+                </div>
+                <div class="cond">
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="" class="icon" />
+                    <p class="condition">Cloudy</p>
+                </div>
+            </div>
             <div class="hi-lo">
-                <p class="low">0°F</p>
-                <p class="high">100°F</p>
+                <p class="low">Low of</p>
+                <p class="high">High of</p>
+            </div>
+            <div class="more-info">
+                <p class="humid">% Humidity</p>
+                <p class="wind">MPH Wind</p>
             </div>
         </div>
-    </main>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
