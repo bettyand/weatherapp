@@ -57,11 +57,23 @@ input {
     margin: auto;
 }
 
+.icon {
+    animation-name: bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
 .cond {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.condition {
+    margin-bottom: 0px;
 }
 
 .hi-lo, .more-info {
@@ -72,3 +84,7 @@ input {
     margin-top: 20px;
 }
 
+@keyframes bounce {
+    0% {transform:translateY(-5px)}
+    100% {transform:translateY(15px)}
+}

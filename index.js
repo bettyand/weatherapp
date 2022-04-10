@@ -14,10 +14,10 @@ const weather = {
     getWeather: function (coords) {
         fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + coords.lat + "&lon=" + coords.lon + "&units=imperial&appid=" + this.key)
         .then(response => response.json())
-        .then(data => this.displayWeather(data));
+        .then(data => this.displayWeather(coords, data));
     },
 
-    displayWeather: function (data) {
+    displayWeather: function (coords, data) {
         document.querySelector(".city").innerText = "Current Weather in " + data.name;
         document.querySelector(".temperature").innerText = data.main.temp + "°F";
         document.querySelector(".feels").innerText = "Feels Like " + data.main.feels_like + "°F";
@@ -36,3 +36,5 @@ document.querySelector(".date").innerHTML = `on ${month} ${day}, ${year}`;
 
 document.querySelector("#button").addEventListener("click", function () {weather.startSearch()});
 document.querySelector("#search-bar").addEventListener("keyup", function (event) {if (event.key =="Enter") {weather.startSearch();}})
+
+weather.getCoords(28205);
